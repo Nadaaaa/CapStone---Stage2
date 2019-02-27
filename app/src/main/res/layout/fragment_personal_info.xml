@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PersonalInfoFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/personal_appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/personal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorWhite"
+                app:contentInsetStart="0dp"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <TextView
+                    android:id="@+id/personal_toolbar_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="16dp"
+                    android:text="@string/personal"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:visibility="gone"
+            app:indicatorColor="@color/colorPrimaryDark"
+            app:indicatorName="BallClipRotateIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/personal_userImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:src="@drawable/user_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personal_appBarLayout" />
+
+        <TextView
+            android:id="@+id/personal_userName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/text_Catherine_Ghobrial"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/personal_userImage"
+            app:layout_constraintTop_toTopOf="@id/personal_userImage" />
+
+        <TextView
+            android:id="@+id/personal_userTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/text_Frontend_Web_Developer"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/personal_userName"
+            app:layout_constraintTop_toBottomOf="@id/personal_userName" />
+
+        <TextView
+            android:id="@+id/personal_userCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/text_Exceed_Technology"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/personal_userTitle"
+            app:layout_constraintTop_toBottomOf="@id/personal_userTitle" />
+
+        <View
+            android:id="@+id/personal_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personal_userCompany" />
+
+        <TextView
+            android:id="@+id/personal_text_Bio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/text_Bio"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personal_view" />
+
+        <TextView
+            android:id="@+id/personal_userBio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personal_text_Bio" />
+
+        <LinearLayout
+            android:id="@+id/personal_layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:padding="17dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/personal_userBio"
+            app:layout_constraintTop_toBottomOf="@id/personal_userBio">
+
+            <TextView
+                android:id="@+id/personal_userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_mail"
+                android:drawablePadding="16dp"
+                android:text="@string/text_Catherine_gh_gmail_com"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/personal_userPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawablePadding="16dp"
+                android:text="@string/text_1234567890"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/personal_userMaritalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_maritalstatus"
+                android:drawablePadding="16dp"
+                android:text="@string/text_Engaged"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:padding="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/personal_layout_info">
+
+            <TextView
+                android:id="@+id/personal_signOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_logout"
+                android:drawablePadding="16dp"
+                android:text="@string/sign_out"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

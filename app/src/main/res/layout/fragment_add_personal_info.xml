@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AddPersonalInfoFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/addPersonal_appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/addPersonal_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorWhite"
+                app:contentInsetStart="0dp"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <TextView
+                    android:id="@+id/addPersonal_toolbar_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_margin="16dp"
+                    android:text="@string/personal"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/addPersonal_toolbar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/image_toolbar"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_check" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/addPersonal_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimaryTwo"
+            android:src="@drawable/ic_photo_camera" />
+
+        <EditText
+            android:id="@+id/addPersonal_username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/addPersonal_title"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/text_title"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/addPersonal_company"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/text_company"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/addPersonal_phone"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/text_phone"
+            android:inputType="phone"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/addPersonal_maritalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/text_marital_status"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/addPersonal_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/background_edittext"
+            android:gravity="top|start"
+            android:hint="@string/text_Bio"
+            android:inputType="textMultiLine"
+            android:lines="6"
+            android:maxLines="6"
+            android:paddingStart="20dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="20dp"
+            android:scrollbars="vertical"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+    </LinearLayout>
+
+</ScrollView>

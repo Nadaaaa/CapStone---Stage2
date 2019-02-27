@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "432572612346",
+    "firebase_url": "https://devhires-d27bb.firebaseio.com",
+    "project_id": "devhires-d27bb",
+    "storage_bucket": "devhires-d27bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432572612346:android:bfe3b292f9a8acfe",
+        "android_client_info": {
+          "package_name": "com.example.nada.devhires"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432572612346-cqle2l06d70bqi611mj9j0to0i705n7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUdlkJmWdHbGCyzGQhn4Du4mkBeUc1XKY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

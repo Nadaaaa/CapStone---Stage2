@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AddGitHubUsernameFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/addGitHubUsername_appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/addGitHubUsername_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorWhite"
+            app:contentInsetStart="0dp"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <TextView
+                android:id="@+id/addGitHubUsername_toolbar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_margin="16dp"
+                android:text="@string/projects"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:id="@+id/projects_toolbar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/image_toolbar"
+                    android:src="@drawable/ic_github_connect" />
+
+                <TextView
+                    android:id="@+id/projects_toolbar_text_connected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/text_connect"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addGitHubUsername_appBarLayout">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/image_github"
+            android:gravity="center"
+            android:src="@drawable/ic_github_connect" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/text_connect_to_github"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/text_to_load_all_your_published_work"
+            android:textColor="@color/colorGreyForTexts"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/addGitHub_editText_username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_edittext"
+            android:hint="@string/github_username"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textSize="12sp"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/addGitHub_button"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/background_button"
+            android:text="@string/add"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
