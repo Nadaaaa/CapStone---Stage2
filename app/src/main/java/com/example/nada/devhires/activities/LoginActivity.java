@@ -11,8 +11,6 @@ import android.widget.Toast;
 
 import com.example.nada.devhires.R;
 import com.example.nada.devhires.utils.Utils;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -78,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 LoginActivity.this.finish();
                             } else {
-                                Toast.makeText(LoginActivity.this, "wrong email or password", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, getString(R.string.wrong_email_password), Toast.LENGTH_SHORT).show();
                             }
                             avi.hide();
                         }

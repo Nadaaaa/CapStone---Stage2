@@ -8,8 +8,6 @@
     <string name="login_with_google_account">Login with Google Account</string>
     <string name="register">REGISTER</string>
     <string name="personal">Personal</string>
-    <string name="skills">Skills</string>
-    <string name="experience">Experience</string>
     <string name="projects">Projects</string>
     <string name="text_Catherine_Ghobrial">Catherine Ghobrial</string>
     <string name="text_Frontend_Web_Developer">Frontend Web Developer</string>
@@ -27,9 +25,6 @@
     <string name="text_connected">Connected</string>
     <string name="text_edit_profile">Edit Profile</string>
     <string name="text_connect">Connect</string>
-    <string name="text_add_skill">Add Skill</string>
-    <string name="text_edit_skill">Edit Skill</string>
-    <string name="text_skill_name">Skill Name</string>
     <string name="text_connect_to_github">Connect to GitHub</string>
     <string name="text_to_load_all_your_published_work">To load all your published work</string>
     <string name="text_title">Title</string>
@@ -40,9 +35,11 @@
     <string name="username">Username</string>
     <string name="sign_out_from_github">Sign out from Github</string>
     <string name="no_projects">No Projects</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="wrong_email_password">Wrong email or password</string>
+    <string name="this_email_is_used_before">This email is used before</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 
     <!-- Content Description -->
     <string name="image_splash">image_splash</string>
@@ -54,8 +51,6 @@
 
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, pri an nostrud eloquentiam, vocibus fuisset an pro. Ne nibh assum cotidieque pri. Ea vero populo imperdiet sit, ei rebum admodum quo, stet persius scaevola ea eam. Id probo iriure electram has. Prodesset quaerendum theophrastus vix cu, vis sale inermis an.
 </string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
 
 
 </resources>

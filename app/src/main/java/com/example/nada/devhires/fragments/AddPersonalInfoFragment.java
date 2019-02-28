@@ -1,16 +1,7 @@
 package com.example.nada.devhires.fragments;
 
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
@@ -18,27 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.example.nada.devhires.R;
-import com.example.nada.devhires.activities.SplashActivity;
+
 import com.example.nada.devhires.utils.Utils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.wang.avi.AVLoadingIndicatorView;
-
-import java.io.ByteArrayOutputStream;
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -125,7 +105,7 @@ public class AddPersonalInfoFragment extends Fragment {
     }
 
 
-  /*  @OnClick(R.id.addPersonal_toolbar_image)
+    @OnClick(R.id.addPersonal_toolbar_image)
     void addPersonalInfo() {
         if (!Utils.isEmptyEditTexts(getContext(), editText_username, editText_title, editText_company, editText_phone, editText_bio, editText_maritalStatus)) {
 
@@ -145,54 +125,5 @@ public class AddPersonalInfoFragment extends Fragment {
         }
     }
 
-    @OnClick(R.id.addPersonal_image)
-    void getImageFromGallery() {
-        Intent i = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        // ******** code for crop image
-        i.putExtra("crop", "true");
-        i.putExtra("aspectX", 100);
-        i.putExtra("aspectY", 100);
-        i.putExtra("outputX", 256);
-        i.putExtra("outputY", 356);
 
-        try {
-
-            i.putExtra("return-data", true);
-            startActivityForResult(
-                    Intent.createChooser(i, "Select Picture"), 0);
-        } catch (ActivityNotFoundException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    private Uri getImageUri(Context inContext, Bitmap inImage) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        // inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
-        return Uri.parse(path);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
-            try {
-                String UID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                DatabaseReference usersDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(UID);
-
-                Bundle bundle = data.getExtras();
-                Bitmap bitmap = bundle.getParcelable("data");
-                //imageView_user.setImageBitmap(bitmap);
-
-                String s = String.valueOf(getImageUri(getContext(), bitmap));
-
-                usersDatabase.child("image").setValue(String.valueOf(getImageUri(getContext(), bitmap)));
-
-                Glide.with(getContext()).load(s).into(imageView_user);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }*/
 }

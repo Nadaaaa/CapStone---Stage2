@@ -1,37 +1,30 @@
 package com.example.nada.devhires.models;
 
 public class User {
-    private String image;
     private String username;
     private String email;
     private String jobTitle;
     private String company;
-    private String gender;
     private String phone;
     private String maritalStatus;
     private String bio;
     private String githubUsername;
 
-    public User(String image, String username, String email, String jobTitle, String company, String gender, String phone, String maritalStatus, String bio, String githubUsername) {
-        this.image = image;
+    public User(){
+
+    }
+
+    public User(String username, String email, String jobTitle, String company, String phone, String maritalStatus, String bio, String githubUsername) {
         this.username = username;
         this.email = email;
         this.jobTitle = jobTitle;
         this.company = company;
-        this.gender = gender;
         this.phone = phone;
         this.maritalStatus = maritalStatus;
         this.bio = bio;
         this.githubUsername = githubUsername;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getUsername() {
         return username;
@@ -63,14 +56,6 @@ public class User {
 
     public void setCompany(String company) {
         this.company = company;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
     public String getPhone() {

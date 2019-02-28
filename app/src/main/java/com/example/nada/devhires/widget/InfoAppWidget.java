@@ -6,6 +6,8 @@ import android.content.Context;
 import android.widget.RemoteViews;
 
 import com.example.nada.devhires.R;
+import com.example.nada.devhires.activities.MainActivity;
+import com.example.nada.devhires.models.User;
 
 /**
  * Implementation of App Widget functionality.
@@ -15,10 +17,15 @@ public class InfoAppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
+        User user = MainActivity.getDataFromSharedPrefs(context);
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.info_app_widget);
-        views.setTextViewText(R.id.appwidget_name, widgetText);
+        views.setTextViewText(R.id.appwidget_name, user.getUsername());
+        views.setTextViewText(R.id.appwidget_title, user.getJobTitle());
+        views.setTextViewText(R.id.appwidget_company, user.getCompany());
+        views.setTextViewText(R.id.appwidget_phone, user.getPhone());
+        views.setTextViewText(R.id.appwidget_email, user.getEmail());
+        views.setTextViewText(R.id.appwidget_maritalStatus, user.getMaritalStatus());
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);

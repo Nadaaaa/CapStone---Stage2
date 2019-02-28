@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                         createUserDatabase(email);
                         avi.hide();
                     } else {
-                        Toast.makeText(RegisterActivity.this, "This email is used before", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, getString(R.string.this_email_is_used_before), Toast.LENGTH_SHORT).show();
                         avi.hide();
                     }
                 }
