@@ -1,6 +1,9 @@
 package com.example.nada.devhires.fragments;
 
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -53,6 +56,7 @@ public class ProjectsFragment extends Fragment {
     private List<Repository> tempRepositoryList;
     private String githubUsername;
     FirebaseJobDispatcher dispatcher;
+    private Parcelable saveState;
 
     public ProjectsFragment() {
         // Required empty public constructor
@@ -76,6 +80,10 @@ public class ProjectsFragment extends Fragment {
 
         ButterKnife.bind(this, rootView);
 
+        if (savedInstanceState != null) {
+            saveState = savedInstanceState.getParcelable("SAVE_STATE");
+        }
+
         githubUsername = getArguments().getString("github_username");
 
         tempRepositoryList = new ArrayList<>();
@@ -90,6 +98,19 @@ public class ProjectsFragment extends Fragment {
         mRepositoryList.setAdapter(repositoryAdapter);
 
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        saveState = mRepositoryList.getLayoutManager().onSaveInstanceState();
+        outState.putParcelable("SAVE_STATE", saveState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mRepositoryList.getLayoutManager().onRestoreInstanceState(saveState);
     }
 
     private void getRepositories() {
