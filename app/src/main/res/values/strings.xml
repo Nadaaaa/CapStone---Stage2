@@ -40,6 +40,7 @@
     <string name="this_email_is_used_before">This email is used before</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="wrong_username">Wrong Github Username</string>
 
     <!-- Content Description -->
     <string name="image_splash">image_splash</string>

@@ -101,18 +101,25 @@ public class ProjectsFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<Repository>> call, Response<List<Repository>> response) {
 
-                        if (null != response.body() || response.body().size() <= 0) {
-                            tempRepositoryList.addAll(response.body());
-                            repositoryAdapter.notifyDataSetChanged();
-                        } else {
-                            EmptyViewFragment emptyViewFragment = new EmptyViewFragment();
-                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                            fragmentManager
-                                    .beginTransaction()
-                                    .replace(R.id.fragment_container, emptyViewFragment)
-                                    .commit();
+                        try {
+                            if (response.body() != null || response.body().size() <= 0) {
+                                tempRepositoryList.addAll(response.body());
+                                repositoryAdapter.notifyDataSetChanged();
+                            } else if (response.body() == null) {
+                                EmptyViewFragment emptyViewFragment = new EmptyViewFragment();
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                fragmentManager
+                                        .beginTransaction()
+                                        .replace(R.id.fragment_container, emptyViewFragment)
+                                        .commit();
+                            }
+                            avi.hide();
+                        } catch (NullPointerException e) {
+                            DatabaseReference userDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            userDatabase.child("github_username").setValue("");
+                            Toast.makeText(getContext(), R.string.wrong_username, Toast.LENGTH_LONG).show();
+                            avi.hide();
                         }
-                        avi.hide();
                     }
 
                     @Override

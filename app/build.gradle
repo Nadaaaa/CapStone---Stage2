@@ -16,9 +16,9 @@ android {
             // More code
             myConfig {
                 storeFile file("other.keystore")
-                storePassword "android"
-                keyAlias "androidotherkey"
-                keyPassword "android"
+                storePassword "123456"
+                keyAlias "nada"
+                keyPassword "123456"
             }
         }
     }

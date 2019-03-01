@@ -26,7 +26,7 @@ public class MyJobService extends JobService {
                 }
 
                 try {
-                    Thread.sleep(15000);
+                    Thread.sleep(30000000);
                     Log.d(TAG, "run: Start");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
